@@ -97,11 +97,5 @@ const laterCloud = function() {
   setTimeout(laterCloud, Math.random() * 12000)
 }
 
-canvas.onkeypress = function(evt) {
-  if (evt.charCode === 32) {
-    bars = !bars
-  }
-}
-
 render()
 laterCloud()
