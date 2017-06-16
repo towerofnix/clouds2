@@ -19,6 +19,16 @@ const canvas = document.getElementById('target')
 canvas.width = width
 canvas.height = height
 
+const flippedCloudCanvas = document.createElement('canvas')
+cloudImage.addEventListener('load', () => {
+  flippedCloudCanvas.width = cloudImage.width
+  flippedCloudCanvas.height = cloudImage.height
+  const flipCtx = flippedCloudCanvas.getContext('2d')
+  flipCtx.translate(cloudImage.width, 0)
+  flipCtx.scale(-1, 1)
+  flipCtx.drawImage(cloudImage, 0, 0)
+})
+
 const addCloud = function() {
   const cloud = {
     x: width,
@@ -68,16 +78,14 @@ const render = function() {
 
   // Clouds
   for (let cloud of clouds) {
-    let image = cloudImage
+    let image
     ctx.globalAlpha = cloud.opacity
     if (cloud.flipped) {
-      const tempCanv = document.createElement('canvas')
-      const tempCtx = tempCanv.getContext('2d')
-      tempCtx.scale(-1, 1)
-      tempCtx.drawImage(cloudImage, 0, 0)
-      image = tempCanv
+      image = flippedCloudCanvas
+    } else {
+      image = cloudImage
     }
-    ctx.drawImage(cloudImage, cloud.x, cloud.y)
+    ctx.drawImage(image, cloud.x, cloud.y)
   }
   ctx.globalAlpha = 1
 
