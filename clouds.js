@@ -50,7 +50,7 @@ setInterval(function() {
   updateWH()
   for (let cloud of clouds) {
     cloud.x -= cloud.speed
-    if (cloud.x < -2000) {
+    if (cloud.x < -cloudImage.width) {
       clouds.splice(clouds.indexOf(cloud), 1)
     }
   }
