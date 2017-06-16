@@ -1,5 +1,7 @@
-# [Clouds](https://liam4.github.io/clouds/)
+# [Clouds][web]
 
-[![Demo screenshot](https://i.imgur.com/9lOc2ue.jpg)](https://liam4.github.io/clouds/)
+[![Demo screenshot](https://i.imgur.com/9lOc2ue.jpg)][web]
 
-[Take a look](https://liam4.github.io/clouds/) at the animated thing yourself!
+[Take a look][web] at the animated thing yourself!
+
+  web: [https://liam4.github.io/clouds/index.html]
