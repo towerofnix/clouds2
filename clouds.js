@@ -1,3 +1,9 @@
+'use strict'
+
+const CLOUD_DELAY_TIME = 1000
+const SPEED = 1.00
+const OPACITY = 0.70
+
 const clouds = []
 
 let width, height
@@ -33,8 +39,8 @@ const addCloud = function() {
   const cloud = {
     x: width,
     y: (Math.random() - 0.5) * height,
-    speed: Math.random() * 0.5,
-    opacity: Math.random() * 0.7,
+    speed: SPEED * Math.random() * 0.5,
+    opacity: Math.random() * OPACITY,
     flipped: Math.random() > 0.5
   }
   clouds.push(cloud)
@@ -94,7 +100,7 @@ const render = function() {
 
 const laterCloud = function() {
   addCloud()
-  setTimeout(laterCloud, Math.random() * 12000)
+  setTimeout(laterCloud, Math.random() * CLOUD_DELAY_TIME)
 }
 
 render()
