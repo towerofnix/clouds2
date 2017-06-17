@@ -1,8 +1,10 @@
 'use strict'
 
-const CLOUD_DELAY_TIME = 1000
+const CLOUD_DELAY_TIME = 6000
 const SPEED = 1.00
 const OPACITY = 0.70
+const INITIAL_CLOUDS = 10
+const CLOUD_IMAGE = 'assets/cloud.png'
 
 const clouds = []
 
@@ -17,7 +19,7 @@ const initialHeight = height
 const initialWidth = width
 
 const cloudImage = document.createElement('img')
-cloudImage.src = 'assets/cloud.png'
+cloudImage.src = CLOUD_IMAGE
 cloudImage.style.display = 'none'
 document.body.appendChild(cloudImage)
 
@@ -39,7 +41,7 @@ const addCloud = function() {
   const cloud = {
     x: width,
     y: (Math.random() - 0.5) * height,
-    speed: SPEED * Math.random() * 0.5,
+    speed: 0.1 + SPEED * Math.random() * 0.5,
     opacity: Math.random() * OPACITY,
     flipped: Math.random() > 0.5
   }
@@ -47,7 +49,7 @@ const addCloud = function() {
   return cloud
 }
 
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < INITIAL_CLOUDS; i++) {
   const cloud = addCloud()
   cloud.x = (Math.random() - 0.5) * width
 }
