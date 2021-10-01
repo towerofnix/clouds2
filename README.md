@@ -1,7 +1,10 @@
-# [Clouds][web]
+# [clouds2][web]
 
-[![Demo screenshot](https://i.imgur.com/9lOc2ue.jpg)][web]
+[![Demo screenshot](https://i.imgur.com/umhTcya.png)][web]
 
 [Take a look][web] at the animated thing yourself!
 
-  [web]: https://liam4.github.io/clouds/index.html
+Fork of [Clouds][clouds1].
+
+  [web]: https://towerofnix.github.io/clouds2/index.html
+  [clouds1]: https://github.com/towerofnix/clouds
